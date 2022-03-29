@@ -34,11 +34,12 @@ And('The user select discount checkbox',()=>{
 })
 And ('The user enters {string} in discount',(discount)=>{
     bDiscount = discount;
-    cy.get('[name="discountvalue"]').type(10);
+    cy.get('[name="discountvalue"]').type(discount);
 }) 
 
 And('The user click the submit button',()=>{
     cy.get('[name="submit"]').click();
+    cy.wait(2000);
 
 })
 Then('The transaction record will be generated', ()=>{
