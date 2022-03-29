@@ -22,19 +22,19 @@ And('The user select {string} from the dropdown list',(name)=>{
 
 And('The user enters the units as {string}',(units)=>{
     bUnits = units;
-    cy.get('[name="units"]').type(units);
+    cy.get('[name="units"]').should('be.visible').should('be.enabled').type(units);
 })
 
 And('The user enters the price as {string}',(price)=>{
     bPrice = price;
-    cy.get('[name="price"]').type(price);
+    cy.get('[name="price"]').should('be.visible').should('be.enabled').type(price);
 })
 And('The user select discount checkbox',()=>{
     cy.get('[name="discount"]').click();
 })
 And ('The user enters {string} in discount',(discount)=>{
     bDiscount = discount;
-    cy.get('[name="discountvalue"]').type(discount);
+    cy.get('[name="discountvalue"]').should('be.visible').should('be.enabled').type(discount);
 }) 
 
 And('The user click the submit button',()=>{
